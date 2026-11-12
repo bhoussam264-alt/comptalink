@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   COMPTALINK - Styles globaux
+   Charte : Bleu nuit #1E3A5F, Bleu #2E86AB, Orange #F18F01
+------------------------------------------------------------------- */
+
+body {
+  @apply bg-grisclair text-nuit;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Composants réutilisables */
+@layer components {
+  .cl-card {
+    @apply bg-white rounded-xl shadow-card border border-gray-100;
+  }
+
+  .cl-input {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-nuit
+           outline-none transition focus:border-bleu focus:ring-2 focus:ring-bleu/20
+           disabled:bg-gray-100;
+  }
+
+  .cl-label {
+    @apply mb-1 block text-sm font-medium text-nuit;
+  }
+
+  .cl-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm
+           font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .cl-btn-primary {
+    @apply cl-btn bg-bleu text-white hover:bg-[#256f8f];
+  }
+
+  .cl-btn-secondary {
+    @apply cl-btn bg-nuit text-white hover:bg-[#162c48];
+  }
+
+  .cl-btn-accent {
+    @apply cl-btn bg-orange text-white hover:bg-[#d47e01];
+  }
+
+  .cl-btn-ghost {
+    @apply cl-btn border border-gray-300 bg-white text-nuit hover:bg-grisclair;
+  }
+
+  .cl-btn-danger {
+    @apply cl-btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100;
+  }
+
+  .cl-table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .cl-table thead th {
+    @apply border-b border-gray-200 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gris;
+  }
+
+  .cl-table tbody td {
+    @apply border-b border-gray-100 px-4 py-3 align-middle;
+  }
+
+  .cl-table tbody tr:hover {
+    @apply bg-grisclair;
+  }
+}
